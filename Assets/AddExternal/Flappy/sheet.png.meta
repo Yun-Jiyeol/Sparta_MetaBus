@@ -121,7 +121,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BackGround
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1213
+        width: 800
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b84ab9409386ee409bb0e14f8b5ed56
+      internalID: 1889044886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plane_0
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 98
+        width: 88
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa0ff109bf21f34b9524acf33a8face
+      internalID: 870729455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plane_1
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 917
+        width: 88
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c17d2feda33e4494db595662cdd5394e
+      internalID: 1570552539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plane_2
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 990
+        width: 88
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 074b21f22fda0644fb1ce1c5e70df680
+      internalID: 849701471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mouse_0
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 644
+        width: 59
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca083730048d34419d3729741a68413
+      internalID: -360856521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plane_Dead
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 844
+        width: 88
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3076740ed19cea4596577d810d60bdc
+      internalID: 1472563693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_Down
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 409
+        width: 108
+        height: 239
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b1c619deb2c5984e8ee24a7d700d79a
+      internalID: 667852328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall_Up
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 320
+        width: 108
+        height: 239
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f555f3e01ebc5c940be8dff50efdf469
+      internalID: 1345428114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mouse_1
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 300
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32a97defa5718594ea07fc316cbd6fd7
+      internalID: -1404382675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1977
+        width: 808
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22d469b98d6da51448ff396076a69fc0
+      internalID: 2093146625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +342,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BackGround: 1889044886
+      Ground: 2093146625
+      Mouse_0: -360856521
+      Mouse_1: -1404382675
+      Plane_0: 870729455
+      Plane_1: 1570552539
+      Plane_2: 849701471
+      Plane_Dead: 1472563693
+      Wall_Down: 667852328
+      Wall_Up: 1345428114
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

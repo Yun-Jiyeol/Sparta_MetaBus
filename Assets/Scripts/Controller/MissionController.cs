@@ -7,6 +7,7 @@ public class MissionController : MonoBehaviour
     private bool istrigger = false;
     private bool isClear = false; //미니게임을 성공했는가
 
+    public GameObject SceneChanger; //씬 변경 시 보일 것
     public GameObject minigame; //실행시 진행될 미니게임
 
     public GameObject manual; //트리거가 발동될 때 플레이어에게 매뉴얼을 보인다
@@ -17,8 +18,15 @@ public class MissionController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && istrigger)
         {
-            Instantiate(minigame); //미니게임 스폰
+            Instantiate(SceneChanger);
+            Invoke("SpawnMinigame", 2f); //2초 후 미니게임 스폰
         }
+    }
+
+    void SpawnMinigame()
+    {
+        Instantiate(minigame);
+        Destroy(SceneChanger, 4f);
     }
 
     public void IsSuccess() //미니게임 성공시 불러온다
@@ -28,6 +36,7 @@ public class MissionController : MonoBehaviour
             Destroy(i);
         }
         isClear = true;
+        istrigger = false;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
