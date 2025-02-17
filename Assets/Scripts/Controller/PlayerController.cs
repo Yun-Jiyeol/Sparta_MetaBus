@@ -10,8 +10,4 @@ public class PlayerController : BaseController
         movementDirection = inputValue.Get<Vector2>();
         movementDirection = movementDirection.normalized;
     }
-    void OnClick(InputValue inputValue)
-    {
-        // ¹º°¡´Â = inputValue.isPressed
-    }
 }
