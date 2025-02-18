@@ -6,16 +6,26 @@ using UnityEngine.InputSystem;
 
 public class MiniGameManager : MonoBehaviour
 {
-    public Transform transform; //소환 위치
+    public Transform spawntransform; //소환 위치
     public GameObject ChangeScene; //씬을 변경할 때 화면 가리개
     public GameObject Minigame; //미니게임
     public PlayerInput playerInput;
     public MissionController missionController;
 
+    public bool isRestart = false;
+
+    private void Awake()
+    {
+        spawntransform = GameObject.Find("Main Camera").transform;
+        //spawntransform = Transform.Find("Main Camera");
+        playerInput = FindObjectOfType<PlayerInput>();
+        missionController = FindObjectOfType<MissionController>();
+    }
+
     void Start()
     {
         transform.position = new Vector3(
-            transform.position.x, transform.position.y,0);
+            spawntransform.position.x, spawntransform.position.y,0);
 
         ChangeScene.SetActive(true);
         
@@ -49,6 +59,7 @@ public class MiniGameManager : MonoBehaviour
         if (ThisGame != null) { 
             Destroy(ThisGame);
         }
+        isRestart = true;
         SpawnMinigame();
     }
 }

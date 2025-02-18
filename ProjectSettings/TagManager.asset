@@ -8,12 +8,12 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - DeadLine
   - Water
   - UI
   - Player
-  - 
-  - 
+  - BackGround
+  - Obstacle
   - 
   - 
   - 
