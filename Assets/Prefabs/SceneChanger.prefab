@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 6017464643347430400}
   - component: {fileID: 3400871356168162883}
   m_Layer: 0
-  m_Name: Square
+  m_Name: SceneChanger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7582567314491652008
 Transform:
   m_ObjectHideFlags: 0
