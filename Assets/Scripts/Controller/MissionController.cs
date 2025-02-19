@@ -18,6 +18,7 @@ public class MissionController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && istrigger)
         {
             Instantiate(minigame);
+            istrigger = false;
         }
     }
 

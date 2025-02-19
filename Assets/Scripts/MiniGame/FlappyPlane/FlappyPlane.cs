@@ -15,11 +15,10 @@ public class FlappyPlane : MonoBehaviour
     public GameObject Obstacle;
 
     MiniGameManager miniGameManager;
-    bool isStart;
+    public bool isStart;
     bool startSpawn = true;
-    bool isDead = false;
+    public bool isDead = false;
     float moveSpeed = 3f;
-    float backgroundmove = 64f;
     float spawncool = 3f; //3초마다 장애물 스폰
 
     private void Awake()
@@ -34,16 +33,22 @@ public class FlappyPlane : MonoBehaviour
     {
         if (isStart) //시작될 시
         {
-            if (!isDead) //죽었다면
+            if (isDead) //죽었다면
             {
+                CancelInvoke("SpawnWall");
+                if (Input.GetMouseButtonDown(0)) //클릭 시
+                {
+                    miniGameManager.RestartGame();
+                }
                 return;
             }
+
             MoveEntity(); //벽 이동
 
             if (startSpawn)
             {
                 startSpawn = false; //한번만 실행
-                InvokeRepeating("SpawnWall", 3f, spawncool);
+                InvokeRepeating("SpawnWall", 1f, spawncool);
             }
         }
         else
@@ -54,26 +59,17 @@ public class FlappyPlane : MonoBehaviour
             }
         }
     }
-
     void MoveEntity()
     {
-        BackGround.transform.position -= new Vector3(moveSpeed, 0, 0);
+        BackGround.transform.position -= new Vector3(moveSpeed * Time.deltaTime, 0, 0);
     }
     void SpawnWall()
     {
-        GameObject go = Instantiate(Obstacle);
+        GameObject go = Instantiate(Obstacle, ObstaclePosition.transform);
         go.transform.SetParent(BackGround.transform);
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void GameOver()
     {
-        if(collision.gameObject.layer == 7) //레이어로 확인 백그라운드일 시
-        {
-            collision.transform.position += new Vector3(backgroundmove, 0, 0);
-        }
-        if(collision.gameObject.layer == 8) //장애물일 시
-        {
-            Destroy(collision.gameObject);
-        }
+        isDead = true;
     }
 }

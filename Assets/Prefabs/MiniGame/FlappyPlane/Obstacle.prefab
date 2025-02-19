@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8923287020528183138}
   - component: {fileID: 4002968480706421371}
   - component: {fileID: 6228446279340466519}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Wall_Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,9 +168,10 @@ GameObject:
   m_Component:
   - component: {fileID: 9135048365927281832}
   - component: {fileID: 8013659681834542997}
-  m_Layer: 8
+  - component: {fileID: 9137256618392833581}
+  m_Layer: 0
   m_Name: Obstacle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -237,6 +238,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 4}
   m_EdgeRadius: 0
+--- !u!114 &9137256618392833581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2961766539997039567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b67cbb6cf30e460468b0cc94030caa9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highPosY: 1
+  lowPosY: -1
+  holeSizeMin: 1
+  holeSizeMax: 3
+  topObject: {fileID: 8923287020528183138}
+  bottomObject: {fileID: 7617767377432452326}
 --- !u!1 &4000458224025378474
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +267,7 @@ GameObject:
   - component: {fileID: 7617767377432452326}
   - component: {fileID: 2677338606445603975}
   - component: {fileID: 2073366417180370525}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Wall_Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}

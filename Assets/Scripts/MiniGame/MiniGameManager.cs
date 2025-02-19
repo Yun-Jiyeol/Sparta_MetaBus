@@ -9,16 +9,16 @@ public class MiniGameManager : MonoBehaviour
     public Transform spawntransform; //소환 위치
     public GameObject ChangeScene; //씬을 변경할 때 화면 가리개
     public GameObject Minigame; //미니게임
-    public PlayerInput playerInput;
     public MissionController missionController;
 
     public bool isRestart = false;
 
+    GameManager gameManager;
+
     private void Awake()
     {
+        gameManager = GameManager.Instance;
         spawntransform = GameObject.Find("Main Camera").transform;
-        //spawntransform = Transform.Find("Main Camera");
-        playerInput = FindObjectOfType<PlayerInput>();
         missionController = FindObjectOfType<MissionController>();
     }
 
@@ -29,8 +29,6 @@ public class MiniGameManager : MonoBehaviour
 
         ChangeScene.SetActive(true);
         
-        playerInput.enabled = false; //미니게임시 플레이어 정지
-
         Invoke("SpawnMinigame", 1f); //화면을 가린 후 미니게임 소환
     }
 
@@ -38,7 +36,7 @@ public class MiniGameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            playerInput.enabled = true; //플레이어 이동 가능
+            gameManager.EndMinigame();
             Destroy(gameObject); //미니게임 삭제
         }
     }
@@ -49,13 +47,14 @@ public class MiniGameManager : MonoBehaviour
 
     void SpawnMinigame()
     {
+        gameManager.StartMinigame();
         GameObject go = Instantiate(Minigame);
         go.transform.SetParent(transform);
     }
 
     public void RestartGame()
     {
-        Transform ThisGame = transform.Find("FlappyPlane");
+        GameObject ThisGame = GameObject.Find("FlappyPlane(Clone)");
         if (ThisGame != null) { 
             Destroy(ThisGame);
         }
