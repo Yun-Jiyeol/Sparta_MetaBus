@@ -41,7 +41,7 @@ public class BaseController : MonoBehaviour
         Movement(movementDirection);
     }
 
-    private void Movement(Vector2 direction)
+    protected void Movement(Vector2 direction)
     {
         direction = direction * Speed;
         _rigidbody.velocity = direction;
