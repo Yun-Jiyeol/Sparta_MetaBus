@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,6 +11,7 @@ public class MiniGameManager : MonoBehaviour
     public GameObject ChangeScene; //씬을 변경할 때 화면 가리개
     public GameObject Minigame; //미니게임
     public MissionController missionController;
+
 
     public bool isRestart = false;
 

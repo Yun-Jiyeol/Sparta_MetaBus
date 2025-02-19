@@ -48,7 +48,6 @@ MonoBehaviour:
   spawntransform: {fileID: 0}
   ChangeScene: {fileID: 8219822924390248926}
   Minigame: {fileID: 1015893273435321668, guid: 56abafad7f1d072438b64baa9d60e275, type: 3}
-  playerInput: {fileID: 0}
   missionController: {fileID: 0}
   isRestart: 0
 --- !u!1001 &5944999297233097626

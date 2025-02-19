@@ -8,8 +8,6 @@ public class Loop : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Triggerd : " + collision.name);
-
         if (collision.CompareTag("BackGround")) //레이어로 확인 백그라운드일 시
         {
             collision.transform.position += new Vector3(backgroundmove, 0, 0);

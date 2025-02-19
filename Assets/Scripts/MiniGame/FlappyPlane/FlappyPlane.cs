@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +14,12 @@ public class FlappyPlane : MonoBehaviour
     public GameObject Player;
     public GameObject ObstaclePosition;
     public GameObject Obstacle;
+
+    public GameObject StartUI;
+    public GameObject GameUI;
+    public GameObject EndUI;
+    public TextMeshProUGUI scoreText;
+    int score = 0;
 
     MiniGameManager miniGameManager;
     public bool isStart;
@@ -28,6 +35,9 @@ public class FlappyPlane : MonoBehaviour
     private void Start()
     {
         isStart = miniGameManager.isRestart;
+
+        SetStartUI(); //UI초기화
+        scoreText.text = score.ToString();
     }
     private void Update()
     {
@@ -35,13 +45,21 @@ public class FlappyPlane : MonoBehaviour
         {
             if (isDead) //죽었다면
             {
+                SetEndUI();
                 CancelInvoke("SpawnWall");
+                if(score >= 0)
+                {
+                    miniGameManager.Success();
+                }
+
                 if (Input.GetMouseButtonDown(0)) //클릭 시
                 {
                     miniGameManager.RestartGame();
                 }
                 return;
             }
+
+            SetGameUI(); //UI변경
 
             MoveEntity(); //벽 이동
 
@@ -71,5 +89,32 @@ public class FlappyPlane : MonoBehaviour
     public void GameOver()
     {
         isDead = true;
+    }
+
+    void SetStartUI()
+    {
+        StartUI.SetActive(true);
+        GameUI.SetActive(false);
+        EndUI.SetActive(false);
+    }
+    void SetGameUI()
+    {
+        StartUI.SetActive(false);
+        GameUI.SetActive(true);
+        EndUI.SetActive(false);
+    }
+    void SetEndUI()
+    {
+        StartUI.SetActive(false);
+        GameUI.SetActive(false);
+        EndUI.SetActive(true);
+    }
+    public void AddScore()
+    {
+        if (!isDead)
+        {
+            score++;
+            scoreText.text = score.ToString();
+        }
     }
 }

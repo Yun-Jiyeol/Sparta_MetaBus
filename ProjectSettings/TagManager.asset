@@ -49,3 +49,6 @@ TagManager:
   - name: MinigameTile
     uniqueID: 202114047
     locked: 0
+  - name: MinigameUI
+    uniqueID: 427773635
+    locked: 0

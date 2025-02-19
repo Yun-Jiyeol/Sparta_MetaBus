@@ -59,4 +59,11 @@ public class FlappyPlaneController : MonoBehaviour
             flappyPlane.GameOver();
         }
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Obstacle")) //레이어로 확인 백그라운드일 시
+        {
+            flappyPlane.AddScore();
+        }
+    }
 }
