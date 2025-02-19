@@ -50,7 +50,7 @@ public class MiniGameManager : MonoBehaviour
     void SpawnMinigame()
     {
         gameManager.StartMinigame();
-        GameObject go = Instantiate(Minigame);
+        GameObject go = Instantiate(Minigame, this.transform);
         go.transform.SetParent(transform);
     }
 
