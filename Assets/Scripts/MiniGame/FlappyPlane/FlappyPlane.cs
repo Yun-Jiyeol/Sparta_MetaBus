@@ -47,7 +47,7 @@ public class FlappyPlane : MonoBehaviour
             {
                 SetEndUI();
                 CancelInvoke("SpawnWall");
-                if(score >= 0)
+                if(score >= 10)
                 {
                     miniGameManager.Success();
                 }
