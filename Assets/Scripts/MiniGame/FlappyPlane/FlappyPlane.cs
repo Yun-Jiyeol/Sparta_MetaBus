@@ -43,14 +43,14 @@ public class FlappyPlane : MonoBehaviour
     {
         if (isStart) //시작될 시
         {
+            if (score >= 10)
+            {
+                miniGameManager.Success();
+            }
             if (isDead) //죽었다면
             {
                 SetEndUI();
                 CancelInvoke("SpawnWall");
-                if(score >= 10)
-                {
-                    miniGameManager.Success();
-                }
 
                 if (Input.GetMouseButtonDown(0)) //클릭 시
                 {
