@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 7582567314491652008}
   - component: {fileID: 6017464643347430400}
   - component: {fileID: 3400871356168162883}
+  - component: {fileID: 3342744029940790432}
   m_Layer: 0
   m_Name: SceneChanger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7582567314491652008
 Transform:
   m_ObjectHideFlags: 0
@@ -106,3 +107,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3342744029940790432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2347022171318133316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab1f7ef069b8d749bfd15070c60dfda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Time: 5

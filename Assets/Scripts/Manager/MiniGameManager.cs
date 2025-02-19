@@ -12,7 +12,7 @@ public class MiniGameManager : MonoBehaviour
     public GameObject Minigame; //미니게임
     public MissionController missionController;
 
-
+    bool isescape = false;
     public bool isRestart = false;
 
     GameManager gameManager;
@@ -29,18 +29,26 @@ public class MiniGameManager : MonoBehaviour
         transform.position = new Vector3(
             spawntransform.position.x, spawntransform.position.y,0);
 
-        ChangeScene.SetActive(true);
-        
+        gameManager.StartMinigame();
+        Instantiate(ChangeScene, this.transform);
+
         Invoke("SpawnMinigame", 1f); //화면을 가린 후 미니게임 소환
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !isescape)
         {
-            gameManager.EndMinigame();
-            Destroy(gameObject); //미니게임 삭제
+            isescape = true;
+            Instantiate(ChangeScene, this.transform);
+            Invoke("EscapeGame", 1f);
         }
+    }
+
+    void EscapeGame()
+    {
+        gameManager.EndMinigame();
+        Destroy(gameObject); //미니게임 삭제
     }
     public void Success()
     {
@@ -49,7 +57,6 @@ public class MiniGameManager : MonoBehaviour
 
     void SpawnMinigame()
     {
-        gameManager.StartMinigame();
         GameObject go = Instantiate(Minigame, this.transform);
         go.transform.SetParent(transform);
     }

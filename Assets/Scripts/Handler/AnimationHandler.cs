@@ -8,6 +8,7 @@ public class AnimationHandler : MonoBehaviour
 
     protected Animator animator;
 
+
     protected virtual void Awake()
     {
         animator = GetComponentInChildren<Animator>();

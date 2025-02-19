@@ -13,6 +13,13 @@ public class BaseController : MonoBehaviour
 
     protected AnimationHandler animationHandler;
 
+    [Range(1f, 20f)][SerializeField] private float speed = 5;
+    public float Speed
+    {
+        get => speed;
+        set => speed = Mathf.Clamp(value, 0, 20);
+    }
+
     protected virtual void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -36,9 +43,14 @@ public class BaseController : MonoBehaviour
 
     private void Movement(Vector2 direction)
     {
-        direction = direction * 5f;
+        direction = direction * Speed;
         _rigidbody.velocity = direction;
         animationHandler.Move(direction);
+    }
+    private void AddMovement(Vector2 direction)
+    {
+        direction = direction * Speed;
+        _rigidbody.velocity = direction;
     }
 
     private void Rotate()
