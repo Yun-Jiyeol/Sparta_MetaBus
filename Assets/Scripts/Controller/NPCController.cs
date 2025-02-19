@@ -14,6 +14,8 @@ public class NPCController : BaseController
     [SerializeField] bool isMove = true;
     [SerializeField] bool isRandomPosition = false;
 
+    public PlayerCloseNPC playerColseNPC;
+
     protected override void Start()
     {
         GoToRandomPosition(); //생성시 랜덤 좌표를 가지게 되고
@@ -24,6 +26,12 @@ public class NPCController : BaseController
 
         float x = transform.position.x - randomPosition.x;
         float y = transform.position.y - randomPosition.y;
+
+        if (playerColseNPC.isPlayerNear)
+        {
+            Movement(new Vector2(0, 0));
+            return;
+        }
 
         if (Mathf.Sqrt(x*x + y*y) <= 0.1f) //가까울 시
         {
@@ -42,6 +50,10 @@ public class NPCController : BaseController
     }
     protected override void FixedUpdate()
     {
+        if (playerColseNPC.isPlayerNear)
+        {
+            return;
+        }
         if (isMove) //움직인다
         {
             Movement(nextVector);
