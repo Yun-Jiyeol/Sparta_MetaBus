@@ -47,11 +47,6 @@ public class BaseController : MonoBehaviour
         _rigidbody.velocity = direction;
         animationHandler.Move(direction);
     }
-    private void AddMovement(Vector2 direction)
-    {
-        direction = direction * Speed;
-        _rigidbody.velocity = direction;
-    }
 
     private void Rotate()
     {

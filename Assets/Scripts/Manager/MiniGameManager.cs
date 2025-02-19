@@ -21,7 +21,15 @@ public class MiniGameManager : MonoBehaviour
     {
         gameManager = GameManager.Instance;
         spawntransform = GameObject.Find("Main Camera").transform;
+        if (spawntransform == null)
+        {
+            Debug.Log("spawntransform가 없습니다.");
+        }
         missionController = FindObjectOfType<MissionController>();
+        if (missionController == null)
+        {
+            Debug.Log("missionControllerr가 없습니다.");
+        }
     }
 
     void Start()

@@ -31,6 +31,10 @@ public class FlappyPlane : MonoBehaviour
     private void Awake()
     {
         miniGameManager = FindObjectOfType<MiniGameManager>();
+        if (miniGameManager == null)
+        {
+            Debug.Log("miniGameManager가 없습니다.");
+        }
     }
     private void Start()
     {

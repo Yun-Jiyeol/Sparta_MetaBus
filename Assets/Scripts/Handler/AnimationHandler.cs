@@ -12,6 +12,10 @@ public class AnimationHandler : MonoBehaviour
     protected virtual void Awake()
     {
         animator = GetComponentInChildren<Animator>();
+        if(animator == null)
+        {
+            Debug.Log("animator가 없습니다.");
+        }
     }
 
     public void Move(Vector2 obj)
