@@ -5,12 +5,16 @@ using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager Instance { get; private set; }
 
     private bool isPlayerInGame = false;
     public List<GameObject> Havecollider;
     public PlayerInput playerInput;
     //모든 맵의 콜라이더를 가지고 있는 것들(미니게임의 방해됨)
+
+    public float PlayerHP = 100; //현제 체력
+    public float PlayerMaxHP = 100; //최대 체력
+    public float PlayerAttack = 20; //최대 체력
 
     private void Awake()
     {
@@ -30,14 +34,20 @@ public class GameManager : MonoBehaviour
     {
         foreach (GameObject gameObject in Havecollider)
         {
-            gameObject.SetActive(false);
+            if (gameObject !=null)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
     public void EndMinigame()
     {
         foreach (GameObject gameObject in Havecollider)
         {
-            gameObject.SetActive(true);
+            if (gameObject != null)
+            {
+                gameObject.SetActive(true);
+            }
         }
         Invoke("InvokeEndMinigame", 0.3f);
     }

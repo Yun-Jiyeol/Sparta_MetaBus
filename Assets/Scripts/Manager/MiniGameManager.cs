@@ -46,14 +46,18 @@ public class MiniGameManager : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !isescape)
-        {
-            isescape = true;
-            Instantiate(ChangeScene, this.transform);
-            Invoke("EscapeGame", 1f);
+        {  
+            EscapeGame();
         }
     }
 
-    void EscapeGame()
+    public void EscapeGame()
+    {
+        isescape = true;
+        Instantiate(ChangeScene, this.transform);
+        Invoke("InvokeEscapeGame", 1f);
+    }
+    void InvokeEscapeGame()
     {
         gameManager.EndMinigame();
         Destroy(gameObject); //미니게임 삭제

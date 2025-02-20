@@ -24,12 +24,12 @@ public class MissionController : MonoBehaviour
 
     public void IsSuccess() //미니게임 성공시 불러온다
     {
+        isClear = true;
+        istrigger = false;
         foreach (GameObject i in deleteifSuccess) //성공 시 삭제
         {
             Destroy(i);
         }
-        isClear = true;
-        istrigger = false;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
